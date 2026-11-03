@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "B 站倍速 · 任意调速",
+  "version": "2.0.0",
+  "description": "把 B 站播放速度提到任意倍数（0.25×–16×），默认 3×，突破播放器 2.0× 上限。",
+  "permissions": ["storage"],
+  "host_permissions": ["*://*.bilibili.com/*"],
+  "action": {
+    "default_title": "B 站倍速",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.bilibili.com/*"],
+      "js": ["src/bridge.js"],
+      "run_at": "document_start",
+      "world": "ISOLATED"
+    },
+    {
+      "matches": ["*://*.bilibili.com/*"],
+      "js": ["src/main.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}

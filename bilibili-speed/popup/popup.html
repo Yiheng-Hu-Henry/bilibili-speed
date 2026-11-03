@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="head">
+    <div class="brand">
+      <span class="logo">n×</span>
+      <div>
+        <p class="name">B 站倍速</p>
+        <p class="sub">任意调速 · 0.25×–16×</p>
+      </div>
+    </div>
+    <button id="power" class="power" type="button" aria-label="总开关">
+      <span class="knob"></span>
+    </button>
+  </header>
+
+  <section class="card">
+    <div class="value">
+      <span id="val">3</span><span class="unit">×</span>
+    </div>
+
+    <input id="slider" class="slider" type="range" min="25" max="1600" step="5" value="300">
+
+    <div class="scale">
+      <span>0.25×</span><span>4×</span><span>8×</span><span>16×</span>
+    </div>
+
+    <div class="presets" id="presets">
+      <button data-rate="1" type="button">1×</button>
+      <button data-rate="1.5" type="button">1.5×</button>
+      <button data-rate="2" type="button">2×</button>
+      <button data-rate="2.5" type="button">2.5×</button>
+      <button data-rate="3" type="button">3×</button>
+      <button data-rate="4" type="button">4×</button>
+      <button data-rate="8" type="button">8×</button>
+    </div>
+
+    <div class="fine">
+      <button id="minus" type="button" aria-label="减">−</button>
+      <input id="num" type="number" min="0.25" max="16" step="0.05" value="3">
+      <button id="plus" type="button" aria-label="加">+</button>
+    </div>
+  </section>
+
+  <section class="rows">
+    <label class="row">
+      <span>
+        显示悬浮球
+        <em>视频右下角，可拖动</em>
+      </span>
+      <input id="badge" type="checkbox" checked>
+    </label>
+    <label class="row">
+      <span>
+        保持音调不变
+        <em>加速时声音不变尖</em>
+      </span>
+      <input id="pitch" type="checkbox" checked>
+    </label>
+  </section>
+
+  <footer class="foot">
+    <p><b>Alt + 3</b> 开关 · <b>Alt + ↑ ↓</b> 调速 · 悬浮球上滚动滚轮也能调</p>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
